@@ -1,0 +1,2 @@
+# Clubber before build if needed
+mk_add_options AUTOCLOBBER=1
