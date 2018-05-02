@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Choose a mozconfig to use.
+#
+# Requires:
+# * fzf for fuzzy-finding (https://github.com/junegunn/fzf)
+# * fd to quickly list files (https://github.com/sharkdp/fd)
+
+SCRIPTPATH=$(dirname $(realpath $0))
+MOZCONFIG_PATH=$SCRIPTPATH
+
+CURWD=$(pwd)
+
+if [ ! -f "$CURWD/mach" ]; then
+  echo "To select a mozcfg you need to be in the source folder."
+  exit 2
+fi
+
+chosencfg=$(fd -t f . $MOZCONFIG_PATH | sed "s#$MOZCONFIG_PATH/##" | fzf) || exit 0
+fullpath="$MOZCONFIG_PATH/$chosencfg"
+cp $fullpath ./mozconfig
