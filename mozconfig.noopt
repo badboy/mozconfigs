@@ -2,5 +2,6 @@
 mk_add_options AUTOCLOBBER=1
 
 # Maybe speed up build
+ac_add_options --with-ccache=sccache
 ac_add_options --disable-optimize
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj
