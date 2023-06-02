@@ -1,5 +1,0 @@
-# Clubber before build if needed
-mk_add_options AUTOCLOBBER=1
-
-ac_add_options --enable-artifact-builds
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-artifact
