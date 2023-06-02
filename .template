@@ -1,0 +1,9 @@
+# Clubber before build if needed
+mk_add_options AUTOCLOBBER=1
+
+ac_add_options CCACHE="/home/jer/.mozbuild/sccache/sccache"
+
+# (Experimentally) enable to auto-bootstrap
+ac_add_options --enable-bootstrap
+
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-

@@ -1,0 +1,15 @@
+# Clubber before build if needed
+mk_add_options AUTOCLOBBER=1
+mk_add_options "export LD_LIBRARY_PATH=/usr/lib64"
+
+#ac_add_options CCACHE="/home/jer/.mozbuild/sccache/sccache"
+ac_add_options --with-ccache=sccache
+
+# (Experimentally) enable to auto-bootstrap
+ac_add_options --enable-bootstrap
+ac_add_options --enable-debug
+ac_add_options --enable-debug-symbols
+
+ac_add_options --disable-optimize
+
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-debug
